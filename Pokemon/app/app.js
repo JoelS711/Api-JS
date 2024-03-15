@@ -40,6 +40,6 @@ const searchPokemon = async (pokemon) => {
 };
 
 buscador.addEventListener("blur", (evento) => {
-  let valorPokemon = evento.target.value;
+  let valorPokemon = evento.target.value.toLowerCase();
   searchPokemon(valorPokemon);
 });
