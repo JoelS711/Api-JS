@@ -12,6 +12,7 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
+    
     <link rel="stylesheet" href="style/styles.css" />
     <!-- Enlaces a archivos JavaScript -->
     <script src="app/app.js" defer></script>
@@ -19,6 +20,7 @@
   <body>
     <!-- Contenido de tu página -->
     <header class="header">
+      <img class="header__img" src="assets/pokeball.svg" alt="pokeball--v2"/>
       <h1>Pokemon</h1>
     </header>
     <main class="main">
@@ -35,18 +37,31 @@
           </svg>
         </button>
       </section>
-      <section class="main__container2">
-        <h2 id="titlePokemon"></h2>
+      <section class="main2__container">
+        <div class="main2__title">
+          <h2 id="titlePokemon"></h2>
+          <figure class="main2__gif" id="gif">
+
+          </figure>
+        </div>
+        
         <figure class="imgPokemon" id="imagenPokemon">
 
         </figure>
-        <div class="main__description" id="description">
+        <div class="main2__description" id="description">
 
         </div>
       </section>
     </main>
-    <footer>
-      <p>Pie de página de la página web</p>
+    <footer class="footer">
+        <section class="footer__icons">
+            <i class="fa-brands fa-facebook"></i>
+            <i class="fa-brands fa-instagram"></i>
+            <i class="fa-brands fa-x-twitter"></i>
+            <i class="fa-brands fa-whatsapp"></i>
+            <i class="fa-brands fa-youtube"></i>
+        </section>
+        <p class="footer__copyright">© 2024 JoelS. Todos los derechos reservados.</p>
     </footer>
   </body>
 </html>
