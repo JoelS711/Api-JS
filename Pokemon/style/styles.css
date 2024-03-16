@@ -178,6 +178,9 @@ p {
 }
 
 @media screen and (max-width: 768px) {
+  .main {
+    height: 90vh;
+  }
   .main__container {
     display: flex;
     gap: 20px;
@@ -187,11 +190,18 @@ p {
   }
 
   .main2__container {
-    width: 50%;
+    width: 100%;
+  }
+
+  .search__input {
+    width: 16em;
   }
 }
 
 @media screen and (max-width: 390px) {
+  .main {
+    height: 90vh;
+  }
   .main__container {
     display: flex;
     gap: 20px;
