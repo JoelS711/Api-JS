@@ -187,14 +187,11 @@ p {
     width: 100%;
     flex-direction: column;
     align-items: center;
+    justify-content: flex-start;
   }
 
   .main2__container {
     width: 100%;
-  }
-
-  .search__input {
-    width: 16em;
   }
 }
 
@@ -208,9 +205,19 @@ p {
     width: 100%;
     flex-direction: column;
     align-items: center;
+    justify-content: flex-start;
+  }
+
+  .main__search {
+    display: flex;
+    justify-content: center;
   }
 
   .main2__container {
     width: 100%;
+  }
+
+  .search__input {
+    width: 16em;
   }
 }
