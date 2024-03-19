@@ -1,18 +1,3 @@
-// fetch("https://pokeapi.co/api/v2/pokemon/")
-//   .then((response) => {
-//     if (!response.ok) {
-//       throw new Error("Network response was not ok");
-//     }
-//     return response.json();
-//   })
-//   .then((data) => {
-//     console.log(data);
-//     // Aquí puedes hacer algo con los datos recibidos, como mostrarlos en la página web
-//   })
-//   .catch((error) => {
-//     console.error("There was a problem with the fetch operation:", error);
-//   });
-
 const buscador = document.getElementById("searcher");
 const imagenPokemon = document.getElementById("imagenPokemon");
 
@@ -27,7 +12,6 @@ const searchPokemon = async (pokemon) => {
     gif.innerHTML = `<img src="${pokeJson.sprites.other.showdown.front_default}" class="gifPokemon" alt="gif-pokemon" >`;
     imagenPokemon.innerHTML = `<img src="${pokeJson.sprites.other.dream_world.front_default}" alt="pokemon" >`;
     console.log(pokeJson.sprites.front_default);
-    console.log("si entro");
     titlePokemon.innerHTML = `<h2>${pokeJson.species.name}`;
     let speciesData = await fetch(pokeJson.species.url);
     let speciesJson = await speciesData.json();
