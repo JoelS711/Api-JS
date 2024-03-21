@@ -1,24 +1,3 @@
-/*const url =
-  "https://yahoo-weather5.p.rapidapi.com/weather?location=bogota&format=json&u=c";
-const options = {
-  method: "GET",
-  headers: {
-    "X-RapidAPI-Key": "14485be47bmshc38698980650761p152eb5jsna39813b74d23",
-    "X-RapidAPI-Host": "yahoo-weather5.p.rapidapi.com",
-  },
-};
-
-const search = async (city) => {
-  try {
-    const response = await fetch(url, options);
-    const result = await response.json();
-    console.log(result);
-  } catch (error) {
-    console.error(error);
-  }
-};
-
-search();*/
 const searchCity = document.getElementById("searchCity");
 const icon = document.getElementById("icon")
 const title = document.getElementById("title")
@@ -30,6 +9,7 @@ const wind = document.getElementById("wind")
 const pressure = document.getElementById("pressure")
 const humidity = document.getElementById("humidity")
 const rain = document.getElementById("rain")
+const flag = document.getElementById("flag")
 
 
 
@@ -66,7 +46,8 @@ const search = async (city) => {
       }
     }
     changeBackground(weather);
-
+    flag.innerHTML = `<img src="https://flagsapi.com/${result.sys.country}/flat/32.png">`;
+    console.log(result.sys.country);
     title.innerHTML = `<h2>${result.name}`;
     icon.innerHTML = `<img src="http://openweathermap.org/img/w/${result.weather[0].icon}.png" class="icon__img" alt="Weather Icon">`;
     temp.innerHTML = `${result.main.temp.toFixed(0)}<span class="celsius">&#8451;</span>`;
@@ -81,9 +62,6 @@ const search = async (city) => {
     }else{
       console.log("No se encontro informacion sobre la lluvia");
     }
-
-
-
   } catch (error) {
     console.error(error);
     alert("Ocurrió un error al buscar la ciudad: " + error.message);
