@@ -16,6 +16,10 @@ body {
   overflow: hidden;
 }
 
+video[controls] {
+  display: none;
+}
+
 #background-video {
   position: fixed;
   top: 0;
