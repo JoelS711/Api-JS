@@ -1,13 +1,62 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <script src="app/app.js" defer></script>
-    <link rel="stylesheet" href="style/styles.css" />
-  </head>
-  <body>
-    <main></main>
-  </body>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Weather</title>
+  <link rel="stylesheet" href="style/styles.css" />
+</head>
+
+<body>
+  <video id="background-video" autoplay loop muted>
+    <source src="assets/clearsky.mp4" type="video/mp4">
+    <source src="assets/clouds.mp4" type="video/mp4">
+    <source src="assets/rain.mp4" type="video/mp4">
+    <source src="assets/snow.mp4" type="video/mp4">
+  </video>
+  <main class="card">
+    <section class="card__left">
+      <h2 class="card__title" id="title">City</h2>
+      <div class="card__tempIcon">
+        <span class="spantemp" id="temp">0&#8451;</span>
+
+        <figure class="icon" id="icon"></figure>
+      </div>
+      <p class="card__description" id="climate">Climate</p>
+      <div class="card__temp">
+        <span class="card__temp--max" id="maxTemp">0&#8451;</span>
+        <span class="card__temp--min" id="minTemp">0&#8451;</span>
+      </div>
+    </section>
+    <section class="card__right">
+      <div class="input-group">
+        <input type="text" name="text" autocomplete="off" class="input" id="searchCity">
+        <label class="user-label">City</label>
+      </div>
+      <div class="card__data">
+        <figure class="card__icons">
+          <img src="assets/wind.png" class="card__icons--img" alt="Wind Icon">
+          <span id="wind">0</span>
+        </figure>
+        <figure class="card__icons">
+          <img src="assets/pressure.png" class="card__icons--img" alt="Pressure Icon">
+          <span id="pressure">0</span>
+        </figure>
+        <figure class="card__icons">
+          <img src="assets/humidity.png" class="card__icons--img" alt="Humidity Icon">
+          <span id="humidity">0</span>
+        </figure>
+        <figure class="card__icons">
+          <img src="assets/rainy.png" class="card__icons--img" alt="Rain Icon">
+          <span id="rain">0</span>
+        </figure>
+      </div>
+
+    </section>
+  </main>
+
+  <script src="app/app.js" defer></script>
+</body>
+
 </html>

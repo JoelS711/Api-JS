@@ -4,7 +4,6 @@ const imagenPokemon = document.getElementById("imagenPokemon");
 const searchPokemon = async (pokemon) => {
   try {
     let data = await fetch(`https://pokeapi.co/api/v2/pokemon/${pokemon}`);
-    console.log("entro");
     if (data.status === 404) {
       throw new Error("No se pudo encontrar el Pokémon.");
     }
