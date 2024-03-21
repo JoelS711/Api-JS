@@ -161,3 +161,12 @@ input:valid~label {
 .card__icons--img {
   width: 44px;
 }
+
+
+@media screen and (max-width: 768px) {
+  .card{
+    display: flex;
+    color: #000000;
+    flex-direction: column-reverse;
+  }
+}
