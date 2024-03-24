@@ -175,6 +175,10 @@ input:valid~label {
   display: flex;
 }
 
+.measurement{
+  font-size: 1.5vh;
+}
+
 @media screen and (max-width: 768px) {
   .video-container {
     position: fixed;

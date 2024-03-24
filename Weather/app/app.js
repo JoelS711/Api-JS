@@ -51,13 +51,13 @@ const search = async (city) => {
     icon.innerHTML = `<img src="http://openweathermap.org/img/w/${result.weather[0].icon}.png" class="icon__img" alt="Weather Icon">`;
     temp.innerHTML = `${result.main.temp.toFixed(0)}<span class="celsius">&#8451;</span>`;
     climate.innerHTML = `${result.weather[0].description}`
-    maxTemp.innerHTML = `M: ${result.main.temp_max.toFixed(0)}<span class="celsiusMm">&#8451;</span>`;
-    minTemp.innerHTML = `m: ${result.main.temp_min.toFixed(0)}<span class="celsiusMm">&#8451;</span>`;
-    wind.innerHTML = `${result.wind.speed.toFixed(0)}ms`;
-    pressure.innerHTML = `${result.main.pressure}hPa`;
-    humidity.innerHTML = `${result.main.humidity}%`;
+    maxTemp.innerHTML = `M: ${result.main.temp_max.toFixed(0)}<span class="celsiusMm">&#8451</span>`;
+    minTemp.innerHTML = `m: ${result.main.temp_min.toFixed(0)}<span class="celsiusMm">&#8451</span>`;
+    wind.innerHTML = `${result.wind.speed.toFixed(0)}<span class="measurement">m/s</span>`;
+    pressure.innerHTML = `${result.main.pressure}<span class="measurement">hPa</span>`;
+    humidity.innerHTML = `${result.main.humidity}<span class="measurement">%</span>`;
     if(result.rain && Object.keys(result.rain).length > 0){
-    rain.innerHTML = `${(result.rain["1h"] * 100).toFixed(0)}%`;
+    rain.innerHTML = `${(result.rain["1h"] * 100).toFixed(0)}<span class="measurement">mm/h;</span>`;
     }else{
       console.log("No se encontro informacion sobre la lluvia");
     }
