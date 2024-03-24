@@ -28,8 +28,7 @@ const search = async (city) => {
       switch(weather){
         case "Clouds":
         case "Clear":
-          video.src = "assets/clearsky.mp4";
-          break;
+          video.src = "assets/clearsky.mp4";break;
         case "Drizzle":
         case "Rain":
         case "Thunderstorm":
@@ -52,8 +51,8 @@ const search = async (city) => {
     icon.innerHTML = `<img src="http://openweathermap.org/img/w/${result.weather[0].icon}.png" class="icon__img" alt="Weather Icon">`;
     temp.innerHTML = `${result.main.temp.toFixed(0)}<span class="celsius">&#8451;</span>`;
     climate.innerHTML = `${result.weather[0].description}`
-    maxTemp.innerHTML = `M: ${result.main.temp_max.toFixed(0)}&#8451;`;
-    minTemp.innerHTML = `m: ${result.main.temp_min.toFixed(0)}&#8451;`;
+    maxTemp.innerHTML = `M: ${result.main.temp_max.toFixed(0)}<span class="celsiusMm">&#8451;</span>`;
+    minTemp.innerHTML = `m: ${result.main.temp_min.toFixed(0)}<span class="celsiusMm">&#8451;</span>`;
     wind.innerHTML = `${result.wind.speed.toFixed(0)}ms`;
     pressure.innerHTML = `${result.main.pressure}hPa`;
     humidity.innerHTML = `${result.main.humidity}%`;

@@ -162,8 +162,23 @@ input:valid~label {
   width: 44px;
 }
 
+.celsiusMm{
+  font-size: 1.5vh;
+}
+
+.card__temp--max{
+  display: flex;
+}
+
+.card__temp--min{
+  display: flex;
+}
 
 @media screen and (max-width: 768px) {
+  .video-container {
+    position: relative;
+    z-index: 0;
+  }
   .card{
     display: flex;
     color: #000000;
