@@ -9,7 +9,8 @@
 body {
   width: 100vw;
   height: 100vh;
-  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -38,39 +39,36 @@ video[controls] {
   padding-top: 100px;
 }
 
-
 /* Card */
 .card {
   display: flex;
-  color: #000000;
-  background-color: rgb(119, 207, 242, 0.8);
+  color: #fff;
+  background-color: rgb(130, 99, 239, 0.8);
   border-radius: 20px;
-  box-shadow: 0px 0px 16px 8px rgba(0, 0, 0, 0.3);
-  -webkit-box-shadow: 0px 0px 16px 8px rgba(0, 0, 0, 0.3);
-  -moz-box-shadow: 0px 0px 16px 8px rgba(0, 0, 0, 0.3);
+  box-shadow: 0px 0px 16px 8px rgba(255, 255, 255, 0.3);
+  -webkit-box-shadow: 0px 0px 16px 8px rgba(255, 255, 255, 0.3);
+  -moz-box-shadow: 0px 0px 16px 8px rgba(255, 255, 255, 0.3);
 }
 
 /* Card Left */
 .card__left {
-  background-color: rgba(119, 207, 242, 0.6);
+  background-color: #5128af;
   border-radius: 20px;
   display: flex;
   flex-direction: column;
   align-items: center;
   padding: 20px;
   gap: 10px;
-  box-shadow: 6px 0px 5px 0px rgba(0, 0, 0, 0.32);
-  -webkit-box-shadow: 6px 0px 5px 0px rgba(0, 0, 0, 0.32);
-  -moz-box-shadow: 6px 0px 5px 0px rgba(0, 0, 0, 0.32);
-  border: 2px solid #000000;
+  box-shadow: 6px 0px 5px 0px rgba(255, 255, 255, 0.32);
+  -webkit-box-shadow: 6px 0px 5px 0px rgba(255, 255, 255, 0.32);
+  -moz-box-shadow: 6px 0px 5px 0px rgba(255, 255, 255, 0.32);
+  border: 2px solid #fff;
 }
 
 .card__tempIcon {
   display: flex;
   flex-direction: column-reverse;
   align-items: center;
-
-
 }
 
 .card__temp {
@@ -88,7 +86,6 @@ video[controls] {
   font-size: 4vh;
 }
 
-
 /* Card Right */
 
 .card__right {
@@ -98,14 +95,11 @@ video[controls] {
   justify-content: center;
   padding: 20px;
   gap: 20px;
-
 }
-
 
 /* Input Style */
 .input-group {
   position: relative;
-
 }
 
 .input {
@@ -115,9 +109,9 @@ video[controls] {
   font-size: 1rem;
   color: #000000;
   transition: border 150ms cubic-bezier(0.4, 0, 0.2, 1);
-  box-shadow: 0px 0px 6px 6px rgba(0, 0, 0, 0.39);
-  -webkit-box-shadow: 0px 0px 6px 6px rgba(0, 0, 0, 0.39);
-  -moz-box-shadow: 0px 0px 6px 6px rgba(0, 0, 0, 0.39);
+  box-shadow: 0px 0px 6px 6px rgba(255, 255, 255, 0.39);
+  -webkit-box-shadow: 0px 0px 6px 6px rgba(255, 255, 255, 0.39);
+  -moz-box-shadow: 0px 0px 6px 6px rgba(255, 255, 255, 0.39);
 }
 
 .user-label {
@@ -132,15 +126,15 @@ video[controls] {
 .input:focus,
 input:valid {
   outline: none;
-  border: 1.5px solid #000000;
+  border: 1.5px solid #fff;
 }
 
-.input:focus~label,
-input:valid~label {
+.input:focus ~ label,
+input:valid ~ label {
   transform: translateY(-50%) scale(0.8);
   /*background-color: #77cff2da;*/
   background-color: #ffffffda;
-  padding: 0 .2em;
+  padding: 0 0.2em;
   color: #000000;
   border-radius: 5px;
 }
@@ -157,6 +151,7 @@ input:valid~label {
   display: flex;
   flex-direction: column;
   align-items: center;
+  gap: 0.4rem;
 }
 
 .card__icons--img {
@@ -175,19 +170,13 @@ input:valid~label {
   display: flex;
 }
 
-.measurement{
+.measurement {
   font-size: 1.5vh;
 }
 
 @media screen and (max-width: 768px) {
   .video-container {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    z-index: -1;
+    background-color: aqua;
   }
 
   .card {
@@ -201,10 +190,14 @@ input:valid~label {
     gap: 0;
   }
 
-  .card__right{
+  .card__right {
     padding: 10px;
     gap: 10px;
   }
 
-  
+  .input {
+    box-shadow: 0px 0px 8px 2px rgba(0, 0, 0, 0.75);
+    -webkit-box-shadow: 0px 0px 8px 2px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 0px 0px 8px 2px rgba(0, 0, 0, 0.75);
+  }
 }

@@ -1,34 +1,35 @@
 const searchCity = document.getElementById("searchCity");
-const icon = document.getElementById("icon")
-const title = document.getElementById("title")
-const temp = document.getElementById("temp")
-const maxTemp = document.getElementById("maxTemp")
-const minTemp = document.getElementById("minTemp")
-const climate = document.getElementById("climate")
-const wind = document.getElementById("wind")
-const pressure = document.getElementById("pressure")
-const humidity = document.getElementById("humidity")
-const rain = document.getElementById("rain")
-const flag = document.getElementById("flag")
-
-
+const icon = document.getElementById("icon");
+const title = document.getElementById("title");
+const temp = document.getElementById("temp");
+const maxTemp = document.getElementById("maxTemp");
+const minTemp = document.getElementById("minTemp");
+const climate = document.getElementById("climate");
+const wind = document.getElementById("wind");
+const pressure = document.getElementById("pressure");
+const humidity = document.getElementById("humidity");
+const rain = document.getElementById("rain");
+const flag = document.getElementById("flag");
 
 const search = async (city) => {
   try {
-    const response = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=1089dcb39c721ba93dc3887a24ad9903&units=metric`);
+    const response = await fetch(
+      `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=1089dcb39c721ba93dc3887a24ad9903&units=metric`
+    );
     if (response.status === 404) {
       throw new Error("No se pudo encontrar la ciudad");
     }
     const result = await response.json();
     console.log(result);
-    const weather = `${result.weather[0].main}`
+    const weather = `${result.weather[0].main}`;
     console.log(weather);
-    function changeBackground(weather){
-    const video = document.getElementById("background-video")
-      switch(weather){
+    function changeBackground(weather) {
+      const video = document.getElementById("background-video");
+      switch (weather) {
         case "Clouds":
         case "Clear":
-          video.src = "assets/clearsky.mp4";break;
+          video.src = "assets/clearsky.mp4";
+          break;
         case "Drizzle":
         case "Rain":
         case "Thunderstorm":
@@ -49,16 +50,26 @@ const search = async (city) => {
     console.log(result.sys.country);
     title.innerHTML = `<h2>${result.name}`;
     icon.innerHTML = `<img src="http://openweathermap.org/img/w/${result.weather[0].icon}.png" class="icon__img" alt="Weather Icon">`;
-    temp.innerHTML = `${result.main.temp.toFixed(0)}<span class="celsius">&#8451;</span>`;
-    climate.innerHTML = `${result.weather[0].description}`
-    maxTemp.innerHTML = `M: ${result.main.temp_max.toFixed(0)}<span class="celsiusMm">&#8451</span>`;
-    minTemp.innerHTML = `m: ${result.main.temp_min.toFixed(0)}<span class="celsiusMm">&#8451</span>`;
-    wind.innerHTML = `${result.wind.speed.toFixed(0)}<span class="measurement">m/s</span>`;
+    temp.innerHTML = `${result.main.temp.toFixed(
+      0
+    )}<span class="celsius">&#8451;</span>`;
+    climate.innerHTML = `${result.weather[0].description}`;
+    maxTemp.innerHTML = `M: ${result.main.temp_max.toFixed(
+      0
+    )}<span class="celsiusMm">&#8451</span>`;
+    minTemp.innerHTML = `m: ${result.main.temp_min.toFixed(
+      0
+    )}<span class="celsiusMm">&#8451</span>`;
+    wind.innerHTML = `${result.wind.speed.toFixed(
+      0
+    )}<span class="measurement">m/s</span>`;
     pressure.innerHTML = `${result.main.pressure}<span class="measurement">hPa</span>`;
     humidity.innerHTML = `${result.main.humidity}<span class="measurement">%</span>`;
-    if(result.rain && Object.keys(result.rain).length > 0){
-    rain.innerHTML = `${(result.rain["1h"] * 100).toFixed(0)}<span class="measurement">mm/h;</span>`;
-    }else{
+    if (result.rain && Object.keys(result.rain).length > 0) {
+      rain.innerHTML = `${(result.rain["1h"] * 100).toFixed(
+        0
+      )}<span class="measurement">mm/h</span>`;
+    } else {
       console.log("No se encontro informacion sobre la lluvia");
     }
   } catch (error) {
