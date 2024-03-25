@@ -65,6 +65,10 @@ video[controls] {
   border: 2px solid #fff;
 }
 
+.card__title {
+  font-size: 2rem;
+}
+
 .card__tempIcon {
   display: flex;
   flex-direction: column-reverse;
@@ -78,7 +82,7 @@ video[controls] {
 }
 
 .spantemp {
-  font-size: 10vh;
+  font-size: 5.8rem;
   display: flex;
 }
 
@@ -126,7 +130,7 @@ video[controls] {
 .input:focus,
 input:valid {
   outline: none;
-  border: 1.5px solid #fff;
+  border: 1.5px solid #5128af;
 }
 
 .input:focus ~ label,
@@ -175,19 +179,16 @@ input:valid ~ label {
 }
 
 @media screen and (max-width: 768px) {
-  .video-container {
-    background-color: aqua;
-  }
-
   .card {
     display: flex;
-    color: #000000;
+    color: #ffffff;
     flex-direction: column-reverse;
   }
 
   .card__left {
     padding: 10px;
     gap: 0;
+    box-shadow: none;
   }
 
   .card__right {
@@ -196,8 +197,8 @@ input:valid ~ label {
   }
 
   .input {
-    box-shadow: 0px 0px 8px 2px rgba(0, 0, 0, 0.75);
-    -webkit-box-shadow: 0px 0px 8px 2px rgba(0, 0, 0, 0.75);
-    -moz-box-shadow: 0px 0px 8px 2px rgba(0, 0, 0, 0.75);
+    box-shadow: 0px 0px 10px 0px rgba(255, 255, 255, 0.6);
+    -webkit-box-shadow: 0px 0px 10px 0px rgba(255, 255, 255, 0.6);
+    -moz-box-shadow: 0px 0px 10px 0px rgba(255, 255, 255, 0.6);
   }
 }
