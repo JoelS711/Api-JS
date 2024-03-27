@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://blogfonts.com/css/aWQ9MTUxNTEzJnN1Yj01MTMmYz1mJnR0Zj1Gb3JtdWxhMS1SZWd1bGFyX3dlYl8wLnR0ZiZuPWZvcm11bGExLWRpc3BsYXktcmVndWxhci0y/Formula1 Display Regular.ttf"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link rel="stylesheet" href="styles/style.css" />
+    <title>F1</title>
+  </head>
+  <body>
+    <header class="header">
+      <figure class="header__logo">
+        <img
+          src="assets/Logo/f1tv.png"
+          class="header__img"
+          alt="Formula 1 Logo"
+        />
+      </figure>
+      <h1 class="header__title">Formula 1</h1>
+    </header>
+    <div class="inputData">
+      <input type="text" name="text" class="input" placeholder="Name Driver" />
+    </div>
+    <main class="container">
+      <section class="card">
+        <section class="card__left">
+          <div class="card__driver">
+            <span class="card__number">1</span>
+            <div class="card__fullName">
+              <span class="card__firstName">Max</span>
+              <span class="card__lastName">VERSTAPPEN</span>
+            </div>
+            <div class="card__country">
+              <img
+                src="https://flagsapi.com/NL/shiny/64.png"
+                class="card__icon"
+              />
+              <span class="card__codCountry">NED</span>
+            </div>
+          </div>
+          <figure class="card__img">
+            <img
+              src="assets/Drivers/1.png"
+              alt="Max VERSTAPPEN"
+              class="card__img--driver"
+            />
+          </figure>
+          <div class="card__points">
+            <span class="card__points--number">25</span>
+            <span class="card__points--pts">pts</span>
+          </div>
+          <figure class="card__escuderia">
+            <span class="card__escuderia--name">Red Bull Racing</span>
+            <img
+              src="assets/Constructors/RedBull.png"
+              alt="Logo Red Bull Racing"
+              class="card__escuderia--logo"
+            />
+          </figure>
+        </section>
+        <section class="card__right">
+          <section class="card__circuit">
+            <figure class="card__flagCircuit">
+              <img src="https://flagsapi.com/BH/shiny/64.png" />
+              <div class="card__circuitTitle">
+                <h3 class="card__circuitTitle--gp">GP Barein</h3>
+                <span class="card__circuitTitle--name">Circuito de Barein</span>
+              </div>
+            </figure>
+            <img
+              src="assets/Circuit/Bahrain International Circuit.jpg"
+              class="card__circuitTitle--img"
+              alt="Image of Circuit"
+            />
+          </section>
+        </section>
+      </section>
+    </main>
+    <script src="app/app.js" defer></script>
+  </body>
+</html>

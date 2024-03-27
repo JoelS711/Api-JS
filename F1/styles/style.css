@@ -1,0 +1,174 @@
+/* Reset CSS */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Global Styles */
+@font-face {
+  font-family: "F1-Regular";
+  src: url("/assets/Font/Formula1-Regular.ttf") format("truetype");
+}
+
+/* Body */
+
+body {
+  width: 100vw;
+  height: 100vh;
+  font-family: "F1-Regular", "formula1-display-regular-2";
+}
+
+/* Header */
+
+.header {
+  background-color: #cc0000;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem;
+}
+
+.header__img {
+  width: 8rem;
+}
+
+/* Input */
+.inputData {
+  padding: 4rem;
+  display: flex;
+  justify-content: center;
+}
+
+.input {
+  border: none;
+  padding: 1rem;
+  border-radius: 1rem;
+  background: #e8e8e8;
+  box-shadow: 20px 20px 60px #c5c5c5, -20px -20px 60px #ffffff;
+  transition: 0.3s;
+}
+
+.input:focus {
+  outline-color: #e8e8e8;
+  background: #e8e8e8;
+  box-shadow: inset 20px 20px 60px #c5c5c5, inset -20px -20px 60px #ffffff;
+  transition: 0.3s;
+}
+
+/* Card */
+
+/* Card Left */
+
+.card {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.card__left {
+  background-color: #cc0000;
+}
+
+.card__driver {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.card__fullName {
+  display: flex;
+  flex-direction: column-reverse;
+}
+
+.card__country {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.card__icon {
+  height: 3rem;
+  width: 3.5rem;
+}
+
+.card__number {
+  font-size: 3rem;
+  font-weight: bold;
+}
+
+.card__firstName {
+  font-size: 1rem;
+}
+
+.card__lastName {
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+.card__codCountry {
+  font-size: 0.8rem;
+  font-weight: bold;
+}
+
+.card__img {
+  background-color: #fff;
+}
+
+.card__img--driver {
+  width: 16rem;
+  height: 16rem;
+}
+
+.card__points {
+  display: flex;
+  justify-content: center;
+}
+
+.card__points--number {
+  font-size: 3rem;
+  font-weight: bold;
+}
+
+.card__escuderia {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.card__escuderia--name {
+  font-size: 1rem;
+}
+
+.card__escuderia--logo {
+  width: 4rem;
+  height: 4rem;
+  border-radius: 0.4rem;
+}
+
+/* Card Right*/
+
+.card__right {
+  background-color: blue;
+}
+
+.card__flagCircuit {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.card__circuitTitle {
+  display: flex;
+  flex-direction: column;
+}
+
+.card__circuitTitle--name {
+  font-size: 0.8rem;
+}
+
+.card__circuitTitle--img {
+  width: 16rem;
+  height: 16rem;
+}
