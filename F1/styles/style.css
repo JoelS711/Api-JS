@@ -64,10 +64,14 @@ body {
 .card {
   display: flex;
   justify-content: space-evenly;
+  background-color: #3671C6;
+  padding: 2rem;
 }
 
 .card__left {
-  background-color: #cc0000;
+  background-color: rgba(255, 255, 255, 0.4);
+  border-radius: 1rem;
+  padding: 0.4rem;
 }
 
 .card__driver {
@@ -111,9 +115,6 @@ body {
   font-weight: bold;
 }
 
-.card__img {
-  background-color: #fff;
-}
 
 .card__img--driver {
   width: 16rem;
@@ -141,15 +142,17 @@ body {
 }
 
 .card__escuderia--logo {
-  width: 4rem;
-  height: 4rem;
+  width: 3rem;
+  height: 3rem;
   border-radius: 0.4rem;
 }
 
 /* Card Right*/
 
 .card__right {
-  background-color: blue;
+  background-color: rgba(255, 255, 255);
+  border-radius: 1rem;
+  padding: 0.4rem;
 }
 
 .card__flagCircuit {
@@ -171,4 +174,67 @@ body {
 .card__circuitTitle--img {
   width: 16rem;
   height: 16rem;
+}
+
+.card__data{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.card__lastRace{
+  font-weight: bold;
+}
+
+.card__position{
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.card__position--left{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.card__position--center{
+  width: 2.5rem;
+  height: 2.5rem;
+}
+
+.card__position--right{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.card__status{
+  display: flex;
+  flex-direction: column;
+}
+
+.card__status--stat{
+  font-size: 0.8rem;
+  gap: 1rem;
+    display: flex;
+    align-items: flex-end;
+}
+
+.card__status--finish{
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+.card__status--points{
+  font-size: 0.8rem;
+  gap: 1rem;
+    display: flex;
+    align-items: flex-end;
+}
+
+.card__status--pos{
+  font-size: 1rem;
+  font-weight: bold;
 }
