@@ -1,0 +1,28 @@
+{
+    "GrandPrix": {
+      "Bahrain Grand Prix": "BH",
+      "Saudi Arabian Grand Prix": "SA",
+      "Australian Grand Prix": "AU",
+      "Japanese Grand Prix": "JP",
+      "Chinese Grand Prix": "CN",
+      "Miami Grand Prix": "US",
+      "Emilia Romagna Grand Prix": "IT",
+      "Monaco Grand Prix": "MC",
+      "Canadian Grand Prix": "CA",
+      "Spanish Grand Prix": "ES",
+      "Austrian Grand Prix": "AT",
+      "British Grand Prix": "GB",
+      "Hungarian Grand Prix": "HU",
+      "Belgian Grand Prix": "BE",
+      "Dutch Grand Prix": "NL",
+      "Italian Grand Prix": "IT",
+      "Azerbaijan Grand Prix": "AZ",
+      "Singapore Grand Prix": "SG",
+      "United States Grand Prix": "US",
+      "Mexico City Grand Prix": "MX",
+      "São Paulo Grand Prix": "BR",
+      "Las Vegas Grand Prix": "US",
+      "Qatar Grand Prix": "QA",
+      "Abu Dhabi Grand Prix": "AE"
+    }
+  }
