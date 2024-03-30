@@ -246,6 +246,7 @@ body {
     display: flex;
     flex-direction: column;
     aling-items: center;
+    gap: 0.6rem;
   } 
     
 }
