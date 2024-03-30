@@ -26,39 +26,39 @@
       <input type="text" name="text" class="input" placeholder="Name or Lastname" id="searchDriver"/>
     </div>
     <main class="container">
-      <section class="card">
+      <section class="card" id="background">
         <section class="card__left">
           <div class="card__driver">
-            <span class="card__number">1</span>
+            <span class="card__number" id="driverNumber">0</span>
             <div class="card__fullName">
-              <span class="card__firstName">Max</span>
-              <span class="card__lastName">VERSTAPPEN</span>
+              <span class="card__firstName" id="driverName">Xxxx</span>
+              <span class="card__lastName" id="driverLastName">XXXXXXXXX</span>
             </div>
             <div class="card__country">
               <img
-                src="https://flagsapi.com/NL/shiny/64.png"
-                class="card__icon"
+                src="https://flagsapi.com/CO/shiny/64.png"
+                class="card__icon" id="driverFlag"
               />
-              <span class="card__codCountry">NED</span>
+              <span class="card__codCountry" id="codCountry">COL</span>
             </div>
           </div>
           <figure class="card__img">
             <img
-              src="assets/Drivers/1.png"
+              src="assets/Drivers/desconocido.png"
               alt="Max VERSTAPPEN"
-              class="card__img--driver"
+              class="card__img--driver" id="imgDriver"
             />
           </figure>
           <div class="card__points">
-            <span class="card__points--number">25</span>
+            <span class="card__points--number" id="driverPoints">0</span>
             <span class="card__points--pts">pts</span>
           </div>
           <figure class="card__escuderia">
-            <span class="card__escuderia--name">Red Bull Racing</span>
+            <span class="card__escuderia--name" id="scuderia">xxxx xxxx xxxx</span>
             <img
-              src="assets/Constructors/RedBull.png"
+              src="assets/Constructors/Red Bull Racing.png"
               alt="Logo Red Bull Racing"
-              class="card__escuderia--logo"
+              class="card__escuderia--logo" id="imgScuderia"
             />
           </figure>
         </section>
@@ -92,6 +92,6 @@
         </section>
       </section>
     </main>
-    <script src="app/app.js" defer></script>
+    <script src="app/app.js" type="module" defer></script>
   </body>
 </html>
