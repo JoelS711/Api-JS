@@ -24,7 +24,6 @@ function removeAccents(str) {
 
 
 const search = async (nameDriver) => {
-  console.log(nameDriver);
   try {
     if (nameDriver) {
       let response = await fetch(
@@ -46,8 +45,6 @@ const search = async (nameDriver) => {
 
       }
 
-      console.log(result[0]);
-      console.log(nameDriver);
       driverNumber.innerHTML = `${result[0].driver_number}`;
       driverName.innerHTML = `${result[0].first_name}`;
       driverLastName.innerHTML = `${result[0].last_name}`;
@@ -60,16 +57,13 @@ const search = async (nameDriver) => {
       codCountry.innerHTML = `${country}`;
       imgDriver.src = `assets/Drivers/${result[0].driver_number}.png`
       imgDriver.alt = `${result[0].last_name}`;
-      console.log(result[0].driver_number);
       const driverPointsResponse = await fetch('https://ergast.com/api/f1/current/driverStandings.json');
       const driverPointsData = await driverPointsResponse.json();
-      console.log(driverPointsData);
       const lastName = `${result[0].last_name}`;
       const getPoints = (driverPointsData, lastName) => {
         const pilot = driverPointsData?.MRData?.StandingsTable?.StandingsLists
           ?.flatMap(list => list.DriverStandings ?? [])
           .find(pilot => removeAccents(pilot.Driver.familyName) === lastName);
-          //console.log(driverPointsData);
         return pilot.points
       }
       driverPoints.innerHTML = `${getPoints(driverPointsData, lastName)}`;
