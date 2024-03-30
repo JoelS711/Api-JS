@@ -65,6 +65,7 @@ body {
   display: flex;
   justify-content: space-evenly;
   background-color: #cc0000;
+  transition: background-color 0.5s ease;
   padding: 2rem;
 }
 
