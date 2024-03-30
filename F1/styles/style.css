@@ -240,3 +240,12 @@ body {
   font-size: 1rem;
   font-weight: bold;
 }
+
+@media screen and (max-width: 768px) {
+  .card {
+    display: flex;
+    flex-direction: column;
+    aling-items: center;
+  } 
+    
+}
