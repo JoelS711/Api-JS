@@ -22,8 +22,10 @@
       </figure>
       <h1 class="header__title">Formula 1</h1>
     </header>
-    <div class="inputData">
-      <input type="text" name="text" class="input" placeholder="Name or Lastname" id="searchDriver"/>
+    <div class="input-container">
+      <input type="text" id="searchDriver" class="input" />
+      <label for="searchDriver" class="label">Name or Lastname</label>
+      <div class="underline"></div>
     </div>
     <main class="container">
       <section class="card" id="background">
@@ -31,13 +33,14 @@
           <div class="card__driver">
             <span class="card__number" id="driverNumber">0</span>
             <div class="card__fullName">
-              <span class="card__firstName" id="driverName">Xxxx</span>
-              <span class="card__lastName" id="driverLastName">XXXXXXXXX</span>
+              <span class="card__firstName" id="driverName">Name</span>
+              <span class="card__lastName" id="driverLastName">Lastname</span>
             </div>
             <div class="card__country">
               <img
                 src="https://flagsapi.com/CO/shiny/64.png"
-                class="card__icon" id="driverFlag"
+                class="card__icon"
+                id="driverFlag"
               />
               <span class="card__codCountry" id="codCountry">COL</span>
             </div>
@@ -46,7 +49,8 @@
             <img
               src="assets/Drivers/desconocido.png"
               alt="Max VERSTAPPEN"
-              class="card__img--driver" id="imgDriver"
+              class="card__img--driver"
+              id="imgDriver"
             />
           </figure>
           <div class="card__points">
@@ -54,11 +58,12 @@
             <span class="card__points--pts">pts</span>
           </div>
           <figure class="card__escuderia">
-            <span class="card__escuderia--name" id="scuderia">xxxx xxxx xxxx</span>
+            <span class="card__escuderia--name" id="scuderia">Scuderia</span>
             <img
               src="assets/Constructors/escudo.gif"
               alt="Logo Red Bull Racing"
-              class="card__escuderia--logo" id="imgScuderia"
+              class="card__escuderia--logo"
+              id="imgScuderia"
             />
           </figure>
         </section>
@@ -68,24 +73,43 @@
               <img src="https://flagsapi.com/CO/shiny/64.png" id="raceFlag" />
               <div class="card__circuitTitle">
                 <h3 class="card__circuitTitle--gp" id="nameGP">Grand Prix</h3>
-                <span class="card__circuitTitle--name" id="nameCircuit">Circuit</span>
+                <span class="card__circuitTitle--name" id="nameCircuit"
+                  >Circuit</span
+                >
               </div>
             </figure>
             <img
               src="assets/Circuit/Bahrain International Circuit.jpg"
               class="card__circuitTitle--img"
-              alt="Image of Circuit" id="imgCircuit"
+              alt="Image of Circuit"
+              id="imgCircuit"
             />
             <div class="card__data">
               <span class="card__lastRace">LAST RACE</span>
               <div class="card__position">
-                <span class="card__position--left"  >GRID <span><b id="grid">0</b></span></span>
-                <img src="assets/Font/flecha-correcta.gif" alt="" class="card__position--center">
-                <span class="card__position--right">POS <span><b id="pos">0</b></span></span>
+                <span class="card__position--left"
+                  >GRID <span><b id="grid">0</b></span></span
+                >
+                <img
+                  src="assets/Font/flecha-correcta.gif"
+                  alt=""
+                  class="card__position--center"
+                />
+                <span class="card__position--right"
+                  >POS <span><b id="pos">0</b></span></span
+                >
               </div>
               <div class="card__status">
-                <span class="card__status--stat">STATUS <span class="card__status--finish" id="stat">No Information</span></span>
-                <span class="card__status--points">POINTS <span class="card__status--pos" id="points">0</span></span>
+                <span class="card__status--stat"
+                  >STATUS
+                  <span class="card__status--finish" id="stat"
+                    >No Information</span
+                  ></span
+                >
+                <span class="card__status--points"
+                  >POINTS
+                  <span class="card__status--pos" id="points">0</span></span
+                >
               </div>
             </div>
           </section>

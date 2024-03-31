@@ -163,9 +163,9 @@ const getCircuit = async () => {
 };
 getCircuit();
 
-searchDriver.addEventListener("blur", (evento) => {
+searchDriver.addEventListener("blur", (event) => {
   let nameDriver =
-    evento.target.value.charAt(0).toUpperCase() +
-    evento.target.value.slice(1).toLowerCase();
+    event.target.value.charAt(0).toUpperCase() +
+    event.target.value.slice(1).toLowerCase();
   search(nameDriver);
 });
