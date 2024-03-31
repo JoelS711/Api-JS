@@ -72,7 +72,7 @@ const search = async (nameDriver) => {
       imgDriver.src = `assets/Drivers/${result[0].driver_number}.png`;
       imgDriver.alt = `${result[0].last_name}`;
       const driverPointsResponse = await fetch(
-        "https://cors-anywhere.herokuapp.com/https://ergast.com/api/f1/current/driverStandings.json"
+        "https://ergast.com/api/f1/current/driverStandings.json"
       );
       const driverPointsData = await driverPointsResponse.json();
       const lastName = `${result[0].last_name}`;
@@ -91,7 +91,7 @@ const search = async (nameDriver) => {
       imgScuderia.alt = `${result[0].team_name}`;
       background.style.backgroundColor = `#${result[0].team_colour}`;
       const responseRace = await fetch(
-        "https://cors-anywhere.herokuapp.com/http://ergast.com/api/f1/2024/last/results.json"
+        "https://ergast.com/api/f1/2024/last/results.json"
       );
       const dataRace = await responseRace.json();
       console.log(dataRace);
@@ -136,7 +136,7 @@ const search = async (nameDriver) => {
 
 const getCircuit = async () => {
   const grandPrixResponse = await fetch(
-    "https://cors-anywhere.herokuapp.com/http://ergast.com/api/f1/current.json"
+    "https://ergast.com/api/f1/current.json"
   );
   const grandPrixData = await grandPrixResponse.json();
   const races = grandPrixData.MRData.RaceTable.Races;
@@ -167,6 +167,5 @@ searchDriver.addEventListener("blur", (evento) => {
   let nameDriver =
     evento.target.value.charAt(0).toUpperCase() +
     evento.target.value.slice(1).toLowerCase();
-  console.log(nameDriver);
   search(nameDriver);
 });
