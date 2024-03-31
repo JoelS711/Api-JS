@@ -16,7 +16,9 @@
 body {
   width: 100vw;
   height: 100vh;
-  font-family: "F1-Regular", "formula1-display-regular-2";
+  font-family: "F1-Regular", "formula1-display-regular-2", "Lucida Sans",
+    "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva,
+    Verdana, sans-serif;
 }
 
 /* Header */
@@ -73,9 +75,9 @@ body {
   background-color: rgba(255, 255, 255, 0.4);
   border-radius: 1rem;
   padding: 1rem;
-  box-shadow: 0px 0px 13px 8px rgba(0,0,0,0.51);
--webkit-box-shadow: 0px 0px 13px 8px rgba(0,0,0,0.51);
--moz-box-shadow: 0px 0px 13px 8px rgba(0,0,0,0.51);
+  box-shadow: 0px 0px 13px 8px rgba(0, 0, 0, 0.51);
+  -webkit-box-shadow: 0px 0px 13px 8px rgba(0, 0, 0, 0.51);
+  -moz-box-shadow: 0px 0px 13px 8px rgba(0, 0, 0, 0.51);
 }
 
 .card__driver {
@@ -119,7 +121,6 @@ body {
   font-weight: bold;
 }
 
-
 .card__img--driver {
   width: 16rem;
   height: 16rem;
@@ -159,9 +160,9 @@ body {
   color: #000;
   border-radius: 1rem;
   padding: 1rem;
-  box-shadow: 0px 0px 13px 8px rgba(0,0,0,0.51);
--webkit-box-shadow: 0px 0px 13px 8px rgba(0,0,0,0.51);
--moz-box-shadow: 0px 0px 13px 8px rgba(0,0,0,0.51);
+  box-shadow: 0px 0px 13px 8px rgba(0, 0, 0, 0.51);
+  -webkit-box-shadow: 0px 0px 13px 8px rgba(0, 0, 0, 0.51);
+  -moz-box-shadow: 0px 0px 13px 8px rgba(0, 0, 0, 0.51);
 }
 
 .card__flagCircuit {
@@ -185,65 +186,65 @@ body {
   height: 16rem;
 }
 
-.card__data{
+.card__data {
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 0.4rem;
 }
 
-.card__lastRace{
+.card__lastRace {
   font-weight: bold;
 }
 
-.card__position{
+.card__position {
   width: 100%;
   display: flex;
   justify-content: space-evenly;
 }
 
-.card__position--left{
+.card__position--left {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-.card__position--center{
+.card__position--center {
   width: 2.5rem;
   height: 2.5rem;
 }
 
-.card__position--right{
+.card__position--right {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-.card__status{
+.card__status {
   display: flex;
   flex-direction: column;
 }
 
-.card__status--stat{
+.card__status--stat {
   font-size: 0.8rem;
   gap: 1rem;
-    display: flex;
-    align-items: flex-end;
+  display: flex;
+  align-items: flex-end;
 }
 
-.card__status--finish{
+.card__status--finish {
   font-size: 1rem;
   font-weight: bold;
 }
 
-.card__status--points{
+.card__status--points {
   font-size: 0.8rem;
   gap: 1rem;
-    display: flex;
-    align-items: flex-end;
+  display: flex;
+  align-items: flex-end;
 }
 
-.card__status--pos{
+.card__status--pos {
   font-size: 1rem;
   font-weight: bold;
 }
@@ -254,6 +255,5 @@ body {
     flex-direction: column;
     align-items: center;
     gap: 0.6rem;
-  } 
-    
+  }
 }
