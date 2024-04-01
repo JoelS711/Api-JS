@@ -62,8 +62,8 @@ body {
   pointer-events: none;
 }
 
-.input-container input[type="text"]:focus ~ .label,
-.input-container input[type="text"]:valid ~ .label {
+.input-container input[type="text"]:focus~.label,
+.input-container input[type="text"]:valid~.label {
   top: -20px;
   font-size: 16px;
   color: #333;
@@ -80,8 +80,8 @@ body {
   transition: all 0.3s ease;
 }
 
-.input-container input[type="text"]:focus ~ .underline,
-.input-container input[type="text"]:valid ~ .underline {
+.input-container input[type="text"]:focus~.underline,
+.input-container input[type="text"]:valid~.underline {
   transform: scaleX(1);
 }
 
@@ -151,6 +151,7 @@ body {
 .card__img--driver {
   width: 16rem;
   height: 16rem;
+  filter: drop-shadow(0 0 0.6rem rgba(0, 0, 0, .8));
 }
 
 .card__points {
@@ -167,7 +168,8 @@ body {
 .card__escuderia {
   display: flex;
   align-items: center;
-  justify-content: space-evenly;
+  justify-content: center;
+  gap: 1rem;
 }
 
 .card__escuderia--name {
@@ -275,6 +277,45 @@ body {
   font-size: 1rem;
   font-weight: bold;
 }
+
+/* Schedules */
+
+.schedules{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem;
+  gap: 2rem;
+}
+
+.schedules__card{
+  background-color: #fff;
+  color: #000;
+  border-radius: 1rem;
+  padding: 1rem;
+  box-shadow: 0px 0px 13px 8px rgba(0, 0, 0, 0.51);
+  -webkit-box-shadow: 0px 0px 13px 8px rgba(0, 0, 0, 0.51);
+  -moz-box-shadow: 0px 0px 13px 8px rgba(0, 0, 0, 0.51);
+}
+
+.schedules__info{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.schedules__data{
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.schedules__data--flag{
+  width: 2rem;
+  height: 2rem;
+}
+
+
 
 @media screen and (max-width: 768px) {
   .card {

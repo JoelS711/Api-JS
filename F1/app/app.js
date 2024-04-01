@@ -86,9 +86,9 @@ const search = async (nameDriver) => {
         return pilot.points;
       };
       driverPoints.innerHTML = `${getPoints(driverPointsData, lastName)}`;
-      scuderia.innerHTML = `${result[0].team_name}`;
+      /*scuderia.innerHTML = `${result[0].team_name}`;
       imgScuderia.src = `assets/Constructors/${result[0].team_name}.png`;
-      imgScuderia.alt = `${result[0].team_name}`;
+      imgScuderia.alt = `${result[0].team_name}`;*/
       background.style.backgroundColor = `#${result[0].team_colour}`;
       const responseRace = await fetch(
         "https://ergast.com/api/f1/2024/last/results.json"
@@ -108,6 +108,7 @@ const search = async (nameDriver) => {
             ); // Encontrar el resultado correspondiente al conductor especificado
           if (dataRaceResult) {
             return [
+              dataRaceResult.Constructor.name,
               dataRaceResult.grid,
               dataRaceResult.position,
               dataRaceResult.status,
@@ -119,10 +120,13 @@ const search = async (nameDriver) => {
         }
         console.log(dataRaceResult);
       };
-      const [gridR, posR, statusR, pointsR] = getDataDriver(
+      const [scuR, gridR, posR, statusR, pointsR] = getDataDriver(
         dataRace,
         codDriver
       );
+      scuderia.innerHTML = `${scuR}`;
+      imgScuderia.src = `assets/Constructors/${scuR}.png`;
+      imgScuderia.alt = `${scuR}`;
       grid.innerHTML = `${gridR}`;
       pos.innerHTML = `${posR}`;
       stat.innerHTML = `${statusR}`;
