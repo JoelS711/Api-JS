@@ -8,6 +8,7 @@
       rel="stylesheet"
       type="text/css"
     />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     <link rel="stylesheet" href="styles/style.css" />
     <title>F1</title>
   </head>
@@ -121,66 +122,28 @@
     </main>
     <section class="schedules">
       <h2 class="schedules__title">Schedules</h2>
-      <div class="schedules__cards" id="scheduleCards">
-        <div class="schedules__card">
-          <figure class="card__flagCircuit">
-            <img src="https://flagsapi.com/CO/shiny/64.png" id="scheduleFlag" />
-            <div class="card__circuitTitle">
-              <span class="schedules__roundRace" id="roundRace"><b>1</b></span>
-              <h3 class="card__circuitTitle--gp" id="scheduleGP">Grand Prix</h3>
-              <span class="card__circuitTitle--name" id="scheduleCircuit"
-                >Circuit</span
-              >
-            </div>
-          </figure>
-          <figure>
-            <img
-              src="assets/Circuit/Bahrain International Circuit.jpg"
-              class="card__circuitTitle--img"
-              alt="Image of Circuit"
-              id="imgScheCircuit"
-            />
-          </figure>
-          <div class="schedules__info">
-            <span class="schedules__date" id="scheduleDate"
-              ><b>Date: </b> xxxx - xx - xx</span
-            >
-            <figure class="schedules__data">
-              <img
-                src="https://flagsapi.com/CO/shiny/64.png"
-                alt=""
-                class="schedules__data--flag"
-              />
-              <span class="schedules__date--race" id="hCO">xx : xx : xx</span>
-            </figure>
-            <figure class="schedules__data">
-              <img
-                src="https://flagsapi.com/BR/shiny/64.png"
-                alt=""
-                class="schedules__data--flag"
-              />
-              <span class="schedules__date--race" id="hBR">xx : xx : xx</span>
-            </figure>
-            <figure class="schedules__data">
-              <img
-                src="https://flagsapi.com/MX/shiny/64.png"
-                alt=""
-                class="schedules__data--flag"
-              />
-              <span class="schedules__date--race" id="hMX">xx : xx : xx</span>
-            </figure>
-            <figure class="schedules__data">
-              <img
-                src="https://flagsapi.com/AR/shiny/64.png"
-                alt=""
-                class="schedules__data--flag"
-              />
-              <span class="schedules__date--race" id="hAR">xx : xx : xx</span>
-            </figure>
-          </div>
-        </div>
+      <div class="swiper-container">
+      <div class="schedules__cards swiper-wrapper" id="scheduleCards">
       </div>
+    </div>
     </section>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script>
+      const swiper = new Swiper(".swiper-container", {
+          effect: "coverflow",
+          grabCursor: true,
+          centeredSlides: true,
+          slidesPerView: "auto",
+          loop: true,
+          coverflowEffect: {
+              depth: 500,
+              modifier: 1,
+              slidesShadows: true,
+              rotate: 0,
+              stretch: 0
+          }
+      })
+  </script>
     <script src="app/app.js" type="module" defer></script>
   </body>
 </html>

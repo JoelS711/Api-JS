@@ -199,7 +199,7 @@ const getCircuit = async () => {
         options,
       });
 
-      return `<div class="schedules__card">
+      return `<div class="schedules__card swiper-slide">
           <figure class="card__flagCircuit">
             <img src="https://flagsapi.com/${getCodeFlag(
               data.raceName

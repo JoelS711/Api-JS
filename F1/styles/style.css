@@ -298,6 +298,27 @@ body {
   -moz-box-shadow: 0px 0px 13px 8px rgba(0, 0, 0, 0.51);
 }
 
+.swiper {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.swiper-wrapper{
+  width: 20rem;
+  padding: .8rem;
+}
+
+.swiper-slide{
+  flex-shrink: 0;
+  width: 100%;
+  padding: 0.8rem;
+  border-radius: 0.8rem;
+}
+
+
+
 .schedules__info{
   display: flex;
   flex-direction: column;
@@ -313,6 +334,11 @@ body {
 .schedules__data--flag{
   width: 2rem;
   height: 2rem;
+}
+
+.imgScheCircuit{
+  width: 16rem;
+  height: 16rem;
 }
 
 
