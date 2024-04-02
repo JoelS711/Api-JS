@@ -164,6 +164,7 @@ const getCircuit = async () => {
       break;
     }
   }
+  //Aqui va el codigo del calendario
 };
 getCircuit();
 
