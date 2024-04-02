@@ -25,6 +25,7 @@ const nameGP = document.getElementById("nameGP");
 const nameCircuit = document.getElementById("nameCircuit");
 const imgCircuit = document.getElementById("imgCircuit");
 const raceFlag = document.getElementById("raceFlag");
+const scheduleCards = document.getElementById("scheduleCards");
 const scheduleGP = document.getElementById("scheduleGP");
 const scheduleCircuit = document.getElementById("scheduleCircuit");
 const roundRace = document.getElementById("roundRace");
@@ -173,6 +174,99 @@ const getCircuit = async () => {
       break;
     }
   }
+  const showCard = () => {
+    return races.map((data) => {
+      const horaZulu = `${data.time}`;
+      const horaUTC = new Date(`1970-01-01T${horaZulu}`);
+      const options = {
+        hour12: false,
+      };
+      const horaLocalColombia = horaUTC.toLocaleTimeString("es-CO", {
+        timeZone: "America/Bogota",
+        hour12: false,
+        options,
+      });
+      const horaLocalMexico = horaUTC.toLocaleTimeString("es-MX", {
+        timeZone: "America/Mexico_City",
+        options,
+      });
+      const horaLocalBrasil = horaUTC.toLocaleTimeString("pt-BR", {
+        timeZone: "America/Sao_Paulo",
+        options,
+      });
+      const horaLocalArgentina = horaUTC.toLocaleTimeString("es-AR", {
+        timeZone: "America/Argentina/Buenos_Aires",
+        options,
+      });
+
+      return `<div class="schedules__card">
+          <figure class="card__flagCircuit">
+            <img src="https://flagsapi.com/${getCodeFlag(
+              data.raceName
+            )}/shiny/64.png" id="scheduleFlag" />
+            <div class="card__circuitTitle">
+              <span class="schedules__roundRace" id="roundRace"><b>${
+                data.round
+              }</b></span>
+              <h3 class="card__circuitTitle--gp" id="scheduleGP">${
+                data.raceName
+              }</h3>
+              <span class="card__circuitTitle--name" id="scheduleCircuit"
+                >${data.Circuit.circuitName}</span
+              >
+            </div>
+          </figure>
+          <figure>
+            <img
+              src="assets/Circuit/${data.Circuit.circuitName}.jpg"
+              class="card__circuitTitle--img"
+              alt="Image of Circuit"
+              id="imgScheCircuit"
+            />
+          </figure>
+          <div class="schedules__info">
+            <span class="schedules__date" id="scheduleDate"
+              ><b>Date: </b> ${data.date}</span
+            >
+            <figure class="schedules__data">
+              <img
+                src="https://flagsapi.com/CO/shiny/64.png"
+                alt=""
+                class="schedules__data--flag"
+              />
+              <span class="schedules__date--race" id="hCO">${horaLocalColombia}</span>
+            </figure>
+            <figure class="schedules__data">
+              <img
+                src="https://flagsapi.com/BR/shiny/64.png"
+                alt=""
+                class="schedules__data--flag"
+              />
+              <span class="schedules__date--race" id="hBR">${horaLocalBrasil}</span>
+            </figure>
+            <figure class="schedules__data">
+              <img
+                src="https://flagsapi.com/MX/shiny/64.png"
+                alt=""
+                class="schedules__data--flag"
+              />
+              <span class="schedules__date--race" id="hMX">${horaLocalMexico}</span>
+            </figure>
+            <figure class="schedules__data">
+              <img
+                src="https://flagsapi.com/AR/shiny/64.png"
+                alt=""
+                class="schedules__data--flag"
+              />
+              <span class="schedules__date--race" id="hAR">${horaLocalArgentina}</span>
+            </figure>
+          </div>
+        </div>`;
+    });
+  };
+  scheduleCards.insertAdjacentHTML(`afterbegin`, showCard());
+
+  /*console.log(races);
   roundRace.innerHTML = `${races[0].round}`;
   scheduleGP.innerHTML = `${races[0].raceName}`;
   scheduleCircuit.innerHTML = `${races[0].Circuit.circuitName}`;
@@ -180,36 +274,12 @@ const getCircuit = async () => {
     races[0].raceName
   )}/shiny/64.png`;
   imgScheCircuit.src = `assets/Circuit/${races[0].Circuit.circuitName}.jpg`;
-  scheduleDate.innerHTML = `<b>Date: </b>${races[0].date}`;
-  const horaZulu = `${races[0].time}`;
-  const horaUTC = new Date(`1970-01-01T${horaZulu}`);
-  const options = {
-    hour12: false,
-  };
-  const horaLocalColombia = horaUTC.toLocaleTimeString("es-CO", {
-    timeZone: "America/Bogota",
-    hour12: false,
-    options,
-  });
-  const horaLocalMexico = horaUTC.toLocaleTimeString("es-MX", {
-    timeZone: "America/Mexico_City",
-    options,
-  });
-  const horaLocalBrasil = horaUTC.toLocaleTimeString("pt-BR", {
-    timeZone: "America/Sao_Paulo",
-    options,
-  });
-  const horaLocalArgentina = horaUTC.toLocaleTimeString("es-AR", {
-    timeZone: "America/Argentina/Buenos_Aires",
-    options,
-  });
+  scheduleDate.innerHTML = `<b>Date: </b>${races[0].date}`;*/
 
-  hCO.innerHTML = `${horaLocalColombia}`;
+  /*hCO.innerHTML = `${horaLocalColombia}`;
   hBR.innerHTML = `${horaLocalBrasil}`;
   hMX.innerHTML = `${horaLocalMexico}`;
-  hAR.innerHTML = `${horaLocalArgentina}`;
-  console.log(horaZulu);
-  console.log(races[0]);
+  hAR.innerHTML = `${horaLocalArgentina}`;*/
 
   //Aqui va el codigo del calendario
 };
