@@ -262,26 +262,9 @@ const getCircuit = async () => {
             </figure>
           </div>
         </div>`;
-    });
+    }).join(''); // Unir todos los strings HTML generados en un solo string
   };
   scheduleCards.insertAdjacentHTML(`afterbegin`, showCard());
-
-  /*console.log(races);
-  roundRace.innerHTML = `${races[0].round}`;
-  scheduleGP.innerHTML = `${races[0].raceName}`;
-  scheduleCircuit.innerHTML = `${races[0].Circuit.circuitName}`;
-  scheduleFlag.src = `https://flagsapi.com/${getCodeFlag(
-    races[0].raceName
-  )}/shiny/64.png`;
-  imgScheCircuit.src = `assets/Circuit/${races[0].Circuit.circuitName}.jpg`;
-  scheduleDate.innerHTML = `<b>Date: </b>${races[0].date}`;*/
-
-  /*hCO.innerHTML = `${horaLocalColombia}`;
-  hBR.innerHTML = `${horaLocalBrasil}`;
-  hMX.innerHTML = `${horaLocalMexico}`;
-  hAR.innerHTML = `${horaLocalArgentina}`;*/
-
-  //Aqui va el codigo del calendario
 };
 getCircuit();
 
