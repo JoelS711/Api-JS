@@ -1,125 +1,186 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://blogfonts.com/css/aWQ9MTUxNTEzJnN1Yj01MTMmYz1mJnR0Zj1Gb3JtdWxhMS1SZWd1bGFyX3dlYl8wLnR0ZiZuPWZvcm11bGExLWRpc3BsYXktcmVndWxhci0y/Formula1 Display Regular.ttf"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link rel="stylesheet" href="styles/style.css" />
+    <title>F1</title>
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link
-    href="https://blogfonts.com/css/aWQ9MTUxNTEzJnN1Yj01MTMmYz1mJnR0Zj1Gb3JtdWxhMS1SZWd1bGFyX3dlYl8wLnR0ZiZuPWZvcm11bGExLWRpc3BsYXktcmVndWxhci0y/Formula1 Display Regular.ttf"
-    rel="stylesheet" type="text/css" />
-  <link rel="stylesheet" href="styles/style.css" />
-  <title>F1</title>
-</head>
-
-<body>
-  <header class="header">
-    <figure class="header__logo">
-      <img src="assets/Logo/f1tv.png" class="header__img" alt="Formula 1 Logo" />
-    </figure>
-    <h1 class="header__title">Formula 1</h1>
-  </header>
-  <div class="input-container">
-    <input type="text" id="searchDriver" class="input" />
-    <label for="searchDriver" class="label">Name or Lastname</label>
-    <div class="underline"></div>
-  </div>
-  <main class="container">
-    <section class="card" id="background">
-      <section class="card__left">
-        <div class="card__driver">
-          <span class="card__number" id="driverNumber">0</span>
-          <div class="card__fullName">
-            <span class="card__firstName" id="driverName">Name</span>
-            <span class="card__lastName" id="driverLastName">Lastname</span>
+  <body>
+    <header class="header">
+      <figure class="header__logo">
+        <img
+          src="assets/Logo/f1tv.png"
+          class="header__img"
+          alt="Formula 1 Logo"
+        />
+      </figure>
+      <h1 class="header__title">Formula 1</h1>
+    </header>
+    <div class="input-container">
+      <input type="text" id="searchDriver" class="input" />
+      <label for="searchDriver" class="label">Name or Lastname</label>
+      <div class="underline"></div>
+    </div>
+    <main class="container">
+      <section class="card" id="background">
+        <section class="card__left">
+          <div class="card__driver">
+            <span class="card__number" id="driverNumber">0</span>
+            <div class="card__fullName">
+              <span class="card__firstName" id="driverName">Name</span>
+              <span class="card__lastName" id="driverLastName">Lastname</span>
+            </div>
+            <div class="card__country">
+              <img
+                src="assets/Logo/bandera-blanca.png"
+                class="card__icon"
+                id="driverFlag"
+              />
+              <span class="card__codCountry" id="codCountry">COUNTRY</span>
+            </div>
           </div>
-          <div class="card__country">
-            <img src="assets/Logo/bandera-blanca.png" class="card__icon" id="driverFlag" />
-            <span class="card__codCountry" id="codCountry">COUNTRY</span>
+          <figure class="card__img">
+            <img
+              src="assets/Drivers/desconocido.png"
+              alt="Search Driver"
+              class="card__img--driver"
+              id="imgDriver"
+            />
+          </figure>
+          <div class="card__points">
+            <span class="card__points--number" id="driverPoints">0</span>
+            <span class="card__points--pts">pts</span>
           </div>
-        </div>
-        <figure class="card__img">
-          <img src="assets/Drivers/desconocido.png" alt="Max VERSTAPPEN" class="card__img--driver" id="imgDriver" />
-        </figure>
-        <div class="card__points">
-          <span class="card__points--number" id="driverPoints">0</span>
-          <span class="card__points--pts">pts</span>
-        </div>
-        <figure class="card__escuderia">
-          <span class="card__escuderia--name" id="scuderia">Scuderia</span>
-          <img src="assets/Constructors/escudo.gif" alt="Logo Red Bull Racing" class="card__escuderia--logo"
-            id="imgScuderia" />
-        </figure>
+          <figure class="card__escuderia">
+            <span class="card__escuderia--name" id="scuderia">Scuderia</span>
+            <img
+              src="assets/Constructors/escudo.gif"
+              alt="Logo Red Bull Racing"
+              class="card__escuderia--logo"
+              id="imgScuderia"
+            />
+          </figure>
+        </section>
+        <section class="card__right">
+          <section class="card__circuit">
+            <figure class="card__flagCircuit">
+              <img src="https://flagsapi.com/CO/shiny/64.png" id="raceFlag" />
+              <div class="card__circuitTitle">
+                <h3 class="card__circuitTitle--gp" id="nameGP">Grand Prix</h3>
+                <span class="card__circuitTitle--name" id="nameCircuit"
+                  >Circuit</span
+                >
+              </div>
+            </figure>
+            <figure>
+              <img
+                src="assets/Circuit/Bahrain International Circuit.jpg"
+                class="card__circuitTitle--img"
+                alt="Image of Circuit"
+                id="imgCircuit"
+              />
+            </figure>
+            <div class="card__data">
+              <span class="card__lastRace">LAST RACE</span>
+              <div class="card__position">
+                <span class="card__position--left"
+                  >GRID <span><b id="grid">0</b></span></span
+                >
+                <img
+                  src="assets/Font/flecha-correcta.gif"
+                  alt=""
+                  class="card__position--center"
+                />
+                <span class="card__position--right"
+                  >POS <span><b id="pos">0</b></span></span
+                >
+              </div>
+              <div class="card__status">
+                <span class="card__status--stat"
+                  >STATUS
+                  <span class="card__status--finish" id="stat"
+                    >No Information</span
+                  ></span
+                >
+                <span class="card__status--points"
+                  >POINTS
+                  <span class="card__status--pos" id="points">0</span></span
+                >
+              </div>
+            </div>
+          </section>
+        </section>
       </section>
-      <section class="card__right">
-        <section class="card__circuit">
+    </main>
+    <section class="schedules">
+      <h2 class="schedules__title">Schedules</h2>
+      <div class="schedules__cards">
+        <div class="schedules__card">
           <figure class="card__flagCircuit">
-            <img src="https://flagsapi.com/CO/shiny/64.png" id="raceFlag" />
+            <img src="https://flagsapi.com/CO/shiny/64.png" id="scheduleFlag" />
             <div class="card__circuitTitle">
-              <h3 class="card__circuitTitle--gp" id="nameGP">Grand Prix</h3>
-              <span class="card__circuitTitle--name" id="nameCircuit">Circuit</span>
+              <span class="schedules__roundRace" id="roundRace"><b>1</b></span>
+              <h3 class="card__circuitTitle--gp" id="scheduleGP">Grand Prix</h3>
+              <span class="card__circuitTitle--name" id="scheduleCircuit"
+                >Circuit</span
+              >
             </div>
           </figure>
           <figure>
-            <img src="assets/Circuit/Bahrain International Circuit.jpg" class="card__circuitTitle--img"
-              alt="Image of Circuit" id="imgCircuit" />
+            <img
+              src="assets/Circuit/Bahrain International Circuit.jpg"
+              class="card__circuitTitle--img"
+              alt="Image of Circuit"
+              id="imgScheCircuit"
+            />
           </figure>
-          <div class="card__data">
-            <span class="card__lastRace">LAST RACE</span>
-            <div class="card__position">
-              <span class="card__position--left">GRID <span><b id="grid">0</b></span></span>
-              <img src="assets/Font/flecha-correcta.gif" alt="" class="card__position--center" />
-              <span class="card__position--right">POS <span><b id="pos">0</b></span></span>
-            </div>
-            <div class="card__status">
-              <span class="card__status--stat">STATUS
-                <span class="card__status--finish" id="stat">No Information</span></span>
-              <span class="card__status--points">POINTS
-                <span class="card__status--pos" id="points">0</span></span>
-            </div>
+          <div class="schedules__info">
+            <span class="schedules__date" id="scheduleDate"
+              ><b>Date: </b> xxxx - xx - xx</span
+            >
+            <figure class="schedules__data">
+              <img
+                src="https://flagsapi.com/CO/shiny/64.png"
+                alt=""
+                class="schedules__data--flag"
+              />
+              <span class="schedules__date--race" id="hCO">xx : xx : xx</span>
+            </figure>
+            <figure class="schedules__data">
+              <img
+                src="https://flagsapi.com/BR/shiny/64.png"
+                alt=""
+                class="schedules__data--flag"
+              />
+              <span class="schedules__date--race" id="hBR">xx : xx : xx</span>
+            </figure>
+            <figure class="schedules__data">
+              <img
+                src="https://flagsapi.com/MX/shiny/64.png"
+                alt=""
+                class="schedules__data--flag"
+              />
+              <span class="schedules__date--race" id="hMX">xx : xx : xx</span>
+            </figure>
+            <figure class="schedules__data">
+              <img
+                src="https://flagsapi.com/AR/shiny/64.png"
+                alt=""
+                class="schedules__data--flag"
+              />
+              <span class="schedules__date--race" id="hAR">xx : xx : xx</span>
+            </figure>
           </div>
-        </section>
-      </section>
-    </section>
-  </main>
-  <section class="schedules">
-    <h2 class="schedules__title">Schedules</h2>
-    <div class="schedules__cards">
-      <div class="schedules__card">
-        <figure class="card__flagCircuit">
-          <img src="https://flagsapi.com/CO/shiny/64.png" id="scheduleFlag" />
-          <div class="card__circuitTitle">
-            <span><b>1</b></span>
-            <h3 class="card__circuitTitle--gp" id="scheduleGP">Grand Prix</h3>
-            <span class="card__circuitTitle--name" id="scheduleCircuit">Circuit</span>
-          </div>
-        </figure>
-        <figure>
-          <img src="assets/Circuit/Bahrain International Circuit.jpg" class="card__circuitTitle--img"
-            alt="Image of Circuit" id="imgCircuit" />
-        </figure>
-        <div class="schedules__info">
-          <span class="schedules__date"><b>Date: </b> xxxx - xx - xx</span>
-          <figure class="schedules__data">
-            <img src="https://flagsapi.com/CO/shiny/64.png" alt="" class="schedules__data--flag">
-            <span class="schedules__date--race">xx : xx : xx</span>
-          </figure>
-          <figure class="schedules__data">
-            <img src="https://flagsapi.com/BR/shiny/64.png" alt="" class="schedules__data--flag">
-            <span class="schedules__date--race">xx : xx : xx</span>
-          </figure>
-          <figure class="schedules__data">
-            <img src="https://flagsapi.com/MX/shiny/64.png" alt="" class="schedules__data--flag">
-            <span class="schedules__date--race">xx : xx : xx</span>
-          </figure>
-          <figure class="schedules__data">
-            <img src="https://flagsapi.com/AR/shiny/64.png" alt="" class="schedules__data--flag">
-            <span class="schedules__date--race">xx : xx : xx</span>
-          </figure>
         </div>
       </div>
-    </div>
-  </section>
-  <script src="app/app.js" type="module" defer></script>
-</body>
-
+    </section>
+    <script src="app/app.js" type="module" defer></script>
+  </body>
 </html>

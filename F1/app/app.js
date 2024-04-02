@@ -25,6 +25,15 @@ const nameGP = document.getElementById("nameGP");
 const nameCircuit = document.getElementById("nameCircuit");
 const imgCircuit = document.getElementById("imgCircuit");
 const raceFlag = document.getElementById("raceFlag");
+const scheduleGP = document.getElementById("scheduleGP");
+const scheduleCircuit = document.getElementById("scheduleCircuit");
+const roundRace = document.getElementById("roundRace");
+const scheduleFlag = document.getElementById("scheduleFlag");
+const imgScheCircuit = document.getElementById("imgScheCircuit");
+const hCO = document.getElementById("hCO");
+const hBR = document.getElementById("hBR");
+const hMX = document.getElementById("hMX");
+const hAR = document.getElementById("hAR");
 
 const today = new Date();
 const year = today.getFullYear();
@@ -146,6 +155,9 @@ const getCircuit = async () => {
   const races = grandPrixData.MRData.RaceTable.Races;
   let lastNameRace;
   let lastNameCircuit;
+  const gpCodeResponse = await fetch("./app/grand_prix.json");
+  const gpCodeData = await gpCodeResponse.json();
+  const getCodeFlag = (lastNameRace) => gpCodeData.GrandPrix[lastNameRace];
   for (let i = races.length - 1; i >= 0; i--) {
     const lastDate = new Date(races[i].date);
     if (lastDate <= new Date(formattedDate)) {
@@ -153,9 +165,6 @@ const getCircuit = async () => {
       lastNameCircuit = races[i].Circuit.circuitName;
       nameGP.innerHTML = `${lastNameRace}`;
       nameCircuit.innerHTML = `${lastNameCircuit}`;
-      const gpCodeResponse = await fetch("./app/grand_prix.json");
-      const gpCodeData = await gpCodeResponse.json();
-      const getCodeFlag = (lastNameRace) => gpCodeData.GrandPrix[lastNameRace];
       imgCircuit.src = `assets/Circuit/${lastNameCircuit}.jpg`;
       imgCircuit.alt = `${lastNameCircuit}`;
       raceFlag.src = `https://flagsapi.com/${getCodeFlag(
@@ -164,6 +173,44 @@ const getCircuit = async () => {
       break;
     }
   }
+  roundRace.innerHTML = `${races[0].round}`;
+  scheduleGP.innerHTML = `${races[0].raceName}`;
+  scheduleCircuit.innerHTML = `${races[0].Circuit.circuitName}`;
+  scheduleFlag.src = `https://flagsapi.com/${getCodeFlag(
+    races[0].raceName
+  )}/shiny/64.png`;
+  imgScheCircuit.src = `assets/Circuit/${races[0].Circuit.circuitName}.jpg`;
+  scheduleDate.innerHTML = `<b>Date: </b>${races[0].date}`;
+  const horaZulu = `${races[0].time}`;
+  const horaUTC = new Date(`1970-01-01T${horaZulu}`);
+  const options = {
+    hour12: false,
+  };
+  const horaLocalColombia = horaUTC.toLocaleTimeString("es-CO", {
+    timeZone: "America/Bogota",
+    hour12: false,
+    options,
+  });
+  const horaLocalMexico = horaUTC.toLocaleTimeString("es-MX", {
+    timeZone: "America/Mexico_City",
+    options,
+  });
+  const horaLocalBrasil = horaUTC.toLocaleTimeString("pt-BR", {
+    timeZone: "America/Sao_Paulo",
+    options,
+  });
+  const horaLocalArgentina = horaUTC.toLocaleTimeString("es-AR", {
+    timeZone: "America/Argentina/Buenos_Aires",
+    options,
+  });
+
+  hCO.innerHTML = `${horaLocalColombia}`;
+  hBR.innerHTML = `${horaLocalBrasil}`;
+  hMX.innerHTML = `${horaLocalMexico}`;
+  hAR.innerHTML = `${horaLocalArgentina}`;
+  console.log(horaZulu);
+  console.log(races[0]);
+
   //Aqui va el codigo del calendario
 };
 getCircuit();
