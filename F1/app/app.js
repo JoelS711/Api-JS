@@ -96,9 +96,6 @@ const search = async (nameDriver) => {
         return pilot.points;
       };
       driverPoints.innerHTML = `${getPoints(driverPointsData, lastName)}`;
-      /*scuderia.innerHTML = `${result[0].team_name}`;
-      imgScuderia.src = `assets/Constructors/${result[0].team_name}.png`;
-      imgScuderia.alt = `${result[0].team_name}`;*/
       background.style.backgroundColor = `#${result[0].team_colour}`;
       const responseRace = await fetch(
         "https://ergast.com/api/f1/2024/last/results.json"
@@ -179,11 +176,10 @@ const getCircuit = async () => {
       const horaZulu = `${data.time}`;
       const horaUTC = new Date(`1970-01-01T${horaZulu}`);
       const options = {
-        hour12: false,
+        hour12: true,
       };
       const horaLocalColombia = horaUTC.toLocaleTimeString("es-CO", {
         timeZone: "America/Bogota",
-        hour12: false,
         options,
       });
       const horaLocalMexico = horaUTC.toLocaleTimeString("es-MX", {
@@ -202,15 +198,13 @@ const getCircuit = async () => {
       return `<div class="schedules__card swiper-slide">
           <figure class="card__flagCircuit">
             <img src="https://flagsapi.com/${getCodeFlag(
-              data.raceName
-            )}/shiny/64.png" id="scheduleFlag" />
+        data.raceName
+      )}/shiny/64.png" id="scheduleFlag" />
             <div class="card__circuitTitle">
-              <span class="schedules__roundRace" id="roundRace"><b>${
-                data.round
-              }</b></span>
-              <h3 class="card__circuitTitle--gp" id="scheduleGP">${
-                data.raceName
-              }</h3>
+              <span class="schedules__roundRace" id="roundRace"><b>${data.round
+        }</b></span>
+              <h3 class="card__circuitTitle--gp" id="scheduleGP">${data.raceName
+        }</h3>
               <span class="card__circuitTitle--name" id="scheduleCircuit"
                 >${data.Circuit.circuitName}</span
               >
@@ -267,6 +261,81 @@ const getCircuit = async () => {
   scheduleCards.insertAdjacentHTML(`afterbegin`, showCard());
 };
 getCircuit();
+
+
+const getTableDrivers = async () => {
+  const tableDriverResponse = await fetch(
+    "https://ergast.com/api/f1/current/driverStandings.json"
+  );
+  const tableDriverData = await tableDriverResponse.json();
+  const driversData = tableDriverData.MRData.StandingsTable.StandingsLists[0].DriverStandings
+  const tableHTML = `
+    <table>
+      <thead>
+        <tr>
+          <th class="driversStand__table--th">Position</th>
+          <th class="driversStand__table--th">Driver</th>
+          <th class="driversStand__table--th">Team</th>
+          <th class="driversStand__table--th">Wins</th>
+          <th class="driversStand__table--th">Points</th>
+        </tr>
+      </thead>
+      <tbody>
+        ${driversData.map((dataD) => `
+          <tr>
+            <td>${dataD.position}</td>
+            <td>${dataD.Driver.givenName} ${dataD.Driver.familyName}</td>
+            <td>${dataD.Constructors[0].name}</td>
+            <td>${dataD.wins}</td>
+            <td>${dataD.points}</td>
+          </tr>
+        `).join('')}
+      </tbody>
+    </table>
+  `;
+return tableHTML;
+};
+getTableDrivers().then((table) => {
+  document.getElementById('tableD').innerHTML = table;
+});
+
+const getTableTeams = async () => {
+  const tableTeamsResponse = await fetch(
+    "https://ergast.com/api/f1/current/constructorStandings.json"
+  );
+  const tableTeamsData = await tableTeamsResponse.json();
+  console.log(tableTeamsData);
+  const teamsData = tableTeamsData.MRData.StandingsTable.StandingsLists[0].ConstructorStandings
+  console.log(teamsData);
+  const tableHTML = `
+    <table>
+      <thead>
+        <tr>
+          <th class="teamsStand__table--th">Position</th>
+          <th class="teamsStand__table--th">Team</th>
+          <th class="teamsStand__table--th">Nationality</th>
+          <th class="teamsStand__table--th">Wins</th>
+          <th class="teamsStand__table--th">Points</th>
+        </tr>
+      </thead>
+      <tbody>
+        ${teamsData.map((dataT) => `
+          <tr>
+            <td>${dataT.position}</td>
+            <td>${dataT.Constructor.name}</td>
+            <td>${dataT.Constructor.nationality}</td>
+            <td>${dataT.wins}</td>
+            <td>${dataT.points}</td>
+          </tr>
+        `).join('')}
+      </tbody>
+    </table>
+  `;
+return tableHTML;
+};
+getTableTeams().then((table) => {
+  document.getElementById('tableT').innerHTML = table;
+});
 
 searchDriver.addEventListener("blur", (event) => {
   let nameDriver =

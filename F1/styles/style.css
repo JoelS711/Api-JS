@@ -310,14 +310,9 @@ body {
 
 .swiper {
   width: 100%;
-  max-width: 100%;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-}
-
-.swiper-3d{
-  perspective: 60rem;
 }
 
 .swiper-wrapper{
@@ -327,8 +322,6 @@ body {
 }
 
 .swiper-slide{
-  flex-shrink: 0;
-  width: 100%;
   padding: 0.8rem;
   border-radius: 0.8rem;
 }
@@ -356,6 +349,51 @@ body {
   width: 16rem;
   height: 16rem;
 }
+
+
+/* Driver Standing */
+
+.driverStand{
+  background-color: #cc0000;
+  color:#fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem;
+  gap: 2rem
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+th, td {
+  text-align: center;
+  padding: 8px;
+  border: 1px solid #000;
+}
+.driversStand__table--th {
+  background-color: #f2f2f2;
+  color: #000;
+}
+
+/* Teams Standing */
+
+.teamStand{
+  background-color: #fff;
+  color:#000;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem;
+  gap: 2rem
+}
+
+.teamsStand__table--th{
+  background-color: #cc0000;
+  color: #fff;
+}
+
 
 
 
