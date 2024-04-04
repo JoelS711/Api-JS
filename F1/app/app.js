@@ -101,9 +101,7 @@ const search = async (nameDriver) => {
         "https://ergast.com/api/f1/2024/last/results.json"
       );
       const dataRace = await responseRace.json();
-      console.log(dataRace);
       const codDriver = result[0].driver_number;
-      console.log(codDriver);
       const getDataDriver = (dataRace, codDriver) => {
         const dataDriver = dataRace?.MRData?.RaceTable?.Races;
         if (dataDriver) {
@@ -125,7 +123,6 @@ const search = async (nameDriver) => {
             return ["*", "*", "No Information", "0"];
           }
         }
-        console.log(dataRaceResult);
       };
       const [scuR, gridR, posR, statusR, pointsR] = getDataDriver(
         dataRace,
@@ -172,39 +169,42 @@ const getCircuit = async () => {
     }
   }
   const showCard = () => {
-    return races.map((data) => {
-      const horaZulu = `${data.time}`;
-      const horaUTC = new Date(`1970-01-01T${horaZulu}`);
-      const options = {
-        hour12: true,
-      };
-      const horaLocalColombia = horaUTC.toLocaleTimeString("es-CO", {
-        timeZone: "America/Bogota",
-        options,
-      });
-      const horaLocalMexico = horaUTC.toLocaleTimeString("es-MX", {
-        timeZone: "America/Mexico_City",
-        options,
-      });
-      const horaLocalBrasil = horaUTC.toLocaleTimeString("pt-BR", {
-        timeZone: "America/Sao_Paulo",
-        options,
-      });
-      const horaLocalArgentina = horaUTC.toLocaleTimeString("es-AR", {
-        timeZone: "America/Argentina/Buenos_Aires",
-        options,
-      });
+    return races
+      .map((data) => {
+        const horaZulu = `${data.time}`;
+        const horaUTC = new Date(`1970-01-01T${horaZulu}`);
+        const options = {
+          hour12: true,
+        };
+        const horaLocalColombia = horaUTC.toLocaleTimeString("es-CO", {
+          timeZone: "America/Bogota",
+          options,
+        });
+        const horaLocalMexico = horaUTC.toLocaleTimeString("es-MX", {
+          timeZone: "America/Mexico_City",
+          options,
+        });
+        const horaLocalBrasil = horaUTC.toLocaleTimeString("pt-BR", {
+          timeZone: "America/Sao_Paulo",
+          options,
+        });
+        const horaLocalArgentina = horaUTC.toLocaleTimeString("es-AR", {
+          timeZone: "America/Argentina/Buenos_Aires",
+          options,
+        });
 
-      return `<div class="schedules__card swiper-slide">
+        return `<div class="schedules__card swiper-slide">
           <figure class="card__flagCircuit">
             <img src="https://flagsapi.com/${getCodeFlag(
-        data.raceName
-      )}/shiny/64.png" id="scheduleFlag" />
+              data.raceName
+            )}/shiny/64.png" id="scheduleFlag" />
             <div class="card__circuitTitle">
-              <span class="schedules__roundRace" id="roundRace"><b>${data.round
-        }</b></span>
-              <h3 class="card__circuitTitle--gp" id="scheduleGP">${data.raceName
-        }</h3>
+              <span class="schedules__roundRace" id="roundRace"><b>${
+                data.round
+              }</b></span>
+              <h3 class="card__circuitTitle--gp" id="scheduleGP">${
+                data.raceName
+              }</h3>
               <span class="card__circuitTitle--name" id="scheduleCircuit"
                 >${data.Circuit.circuitName}</span
               >
@@ -256,24 +256,25 @@ const getCircuit = async () => {
             </figure>
           </div>
         </div>`;
-    }).join(''); // Unir todos los strings HTML generados en un solo string
+      })
+      .join(""); // Unir todos los strings HTML generados en un solo string
   };
   scheduleCards.insertAdjacentHTML(`afterbegin`, showCard());
 };
 getCircuit();
-
 
 const getTableDrivers = async () => {
   const tableDriverResponse = await fetch(
     "https://ergast.com/api/f1/current/driverStandings.json"
   );
   const tableDriverData = await tableDriverResponse.json();
-  const driversData = tableDriverData.MRData.StandingsTable.StandingsLists[0].DriverStandings
+  const driversData =
+    tableDriverData.MRData.StandingsTable.StandingsLists[0].DriverStandings;
   const tableHTML = `
     <table>
       <thead>
         <tr>
-          <th class="driversStand__table--th">Position</th>
+          <th class="driversStand__table--th">Pos</th>
           <th class="driversStand__table--th">Driver</th>
           <th class="driversStand__table--th">Team</th>
           <th class="driversStand__table--th">Wins</th>
@@ -281,22 +282,26 @@ const getTableDrivers = async () => {
         </tr>
       </thead>
       <tbody>
-        ${driversData.map((dataD) => `
+        ${driversData
+          .map(
+            (dataD) => `
           <tr>
             <td>${dataD.position}</td>
             <td>${dataD.Driver.givenName} ${dataD.Driver.familyName}</td>
-            <td>${dataD.Constructors[0].name}</td>
+            <td>${dataD.Constructors[0].name}<img src="assets/Constructors/${dataD.Constructors[0].name}.png" alt="Logo del equipo" class="tableLogo"/></td>
             <td>${dataD.wins}</td>
             <td>${dataD.points}</td>
           </tr>
-        `).join('')}
+        `
+          )
+          .join("")}
       </tbody>
     </table>
   `;
-return tableHTML;
+  return tableHTML;
 };
 getTableDrivers().then((table) => {
-  document.getElementById('tableD').innerHTML = table;
+  document.getElementById("tableD").innerHTML = table;
 });
 
 const getTableTeams = async () => {
@@ -304,14 +309,18 @@ const getTableTeams = async () => {
     "https://ergast.com/api/f1/current/constructorStandings.json"
   );
   const tableTeamsData = await tableTeamsResponse.json();
-  console.log(tableTeamsData);
-  const teamsData = tableTeamsData.MRData.StandingsTable.StandingsLists[0].ConstructorStandings
-  console.log(teamsData);
+  const teamsData =
+    tableTeamsData.MRData.StandingsTable.StandingsLists[0].ConstructorStandings;
+  const nationalityResponse = await fetch("./app/nationality.json");
+  const nationalityData = await nationalityResponse.json();
+  console.log(nationalityData);
+  let nationality;
+  const getFlag = (nationality) => nationalityData[nationality];
   const tableHTML = `
     <table>
       <thead>
         <tr>
-          <th class="teamsStand__table--th">Position</th>
+          <th class="teamsStand__table--th">Pos</th>
           <th class="teamsStand__table--th">Team</th>
           <th class="teamsStand__table--th">Nationality</th>
           <th class="teamsStand__table--th">Wins</th>
@@ -319,22 +328,31 @@ const getTableTeams = async () => {
         </tr>
       </thead>
       <tbody>
-        ${teamsData.map((dataT) => `
+        ${teamsData
+          .map(
+            (dataT) => `
           <tr>
             <td>${dataT.position}</td>
-            <td>${dataT.Constructor.name}</td>
-            <td>${dataT.Constructor.nationality}</td>
+            <td>${dataT.Constructor.name} <img src="assets/Constructors/${
+              dataT.Constructor.name
+            }.png" alt="Logo del equipo" class="tableLogo"/></td>
+            <td>${dataT.Constructor.nationality} 
+            <img src="https://flagsapi.com/${getFlag(
+              dataT.Constructor.nationality
+            )}/shiny/64.png" alt="Bandera Nacional" class="tableLogo"/></td>
             <td>${dataT.wins}</td>
             <td>${dataT.points}</td>
           </tr>
-        `).join('')}
+        `
+          )
+          .join("")}
       </tbody>
     </table>
   `;
-return tableHTML;
+  return tableHTML;
 };
 getTableTeams().then((table) => {
-  document.getElementById('tableT').innerHTML = table;
+  document.getElementById("tableT").innerHTML = table;
 });
 
 searchDriver.addEventListener("blur", (event) => {

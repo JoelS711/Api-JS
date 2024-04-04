@@ -62,8 +62,8 @@ body {
   pointer-events: none;
 }
 
-.input-container input[type="text"]:focus~.label,
-.input-container input[type="text"]:valid~.label {
+.input-container input[type="text"]:focus ~ .label,
+.input-container input[type="text"]:valid ~ .label {
   top: -20px;
   font-size: 16px;
   color: #333;
@@ -80,8 +80,8 @@ body {
   transition: all 0.3s ease;
 }
 
-.input-container input[type="text"]:focus~.underline,
-.input-container input[type="text"]:valid~.underline {
+.input-container input[type="text"]:focus ~ .underline,
+.input-container input[type="text"]:valid ~ .underline {
   transform: scaleX(1);
 }
 
@@ -151,7 +151,7 @@ body {
 .card__img--driver {
   width: 16rem;
   height: 16rem;
-  filter: drop-shadow(0 0 0.6rem rgba(0, 0, 0, .8));
+  filter: drop-shadow(0 0 0.6rem rgba(0, 0, 0, 0.8));
 }
 
 .card__points {
@@ -280,7 +280,7 @@ body {
 
 /* Schedules */
 
-.schedules{
+.schedules {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -290,8 +290,7 @@ body {
   max-width: 100%;
 }
 
-
-.schedules__card{
+.schedules__card {
   width: 100%;
   max-width: 100%;
   background-color: #fff;
@@ -303,11 +302,6 @@ body {
   -moz-box-shadow: 0px 0px 13px 8px rgba(0, 0, 0, 0.51);
 }
 
-.swiper-container{
-  width: 100%;
-  max-width: 100%;
-}
-
 .swiper {
   width: 100%;
   display: flex;
@@ -315,63 +309,71 @@ body {
   justify-content: center;
 }
 
-.swiper-wrapper{
+.swiper-wrapper {
   width: 20rem;
   height: 32rem;
-  padding: .8rem;
+  padding: 0.8rem;
 }
 
-.swiper-slide{
+.swiper-slide {
   padding: 0.8rem;
   border-radius: 0.8rem;
 }
 
-
-
-.schedules__info{
+.schedules__info {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-.schedules__data{
+.schedules__data {
   display: flex;
   align-items: center;
   gap: 0.6rem;
 }
 
-.schedules__data--flag{
+.schedules__data--flag {
   width: 2rem;
   height: 2rem;
 }
 
-.imgScheCircuit{
+.imgScheCircuit {
   width: 16rem;
   height: 16rem;
 }
 
-
 /* Driver Standing */
 
-.driverStand{
+.driverStand {
   background-color: #cc0000;
-  color:#fff;
+  color: #fff;
   display: flex;
   flex-direction: column;
   align-items: center;
   padding: 2rem;
-  gap: 2rem
+  gap: 2rem;
 }
 
 table {
   width: 100%;
   border-collapse: collapse;
+  font-size: 1rem;
 }
-th, td {
+th,
+td {
   text-align: center;
-  padding: 8px;
+  padding: 0.6rem;
   border: 1px solid #000;
 }
+
+.tableLogo {
+  height: 1.4rem;
+  width: 1.4rem;
+  border-radius: 5px;
+  vertical-align: middle;
+  margin-left: 0.4rem;
+}
+
 .driversStand__table--th {
   background-color: #f2f2f2;
   color: #000;
@@ -379,23 +381,20 @@ th, td {
 
 /* Teams Standing */
 
-.teamStand{
+.teamStand {
   background-color: #fff;
-  color:#000;
+  color: #000;
   display: flex;
   flex-direction: column;
   align-items: center;
   padding: 2rem;
-  gap: 2rem
+  gap: 2rem;
 }
 
-.teamsStand__table--th{
+.teamsStand__table--th {
   background-color: #cc0000;
   color: #fff;
 }
-
-
-
 
 @media screen and (max-width: 768px) {
   .card {
@@ -414,5 +413,14 @@ th, td {
     box-shadow: 0px 0px 10px 4px rgba(0, 0, 0, 0.75);
     -webkit-box-shadow: 0px 0px 10px 4px rgba(0, 0, 0, 0.75);
     -moz-box-shadow: 0px 0px 10px 4px rgba(0, 0, 0, 0.75);
+  }
+
+  th,
+  td {
+    padding: 0;
+  }
+
+  .tableLogo {
+    margin-left: 0;
   }
 }
