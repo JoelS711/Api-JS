@@ -287,7 +287,7 @@ body {
   padding: 2rem;
   gap: 2rem;
   width: 100%;
-  max-width: 100%;
+  overflow: hidden;
 }
 
 .schedules__card {
